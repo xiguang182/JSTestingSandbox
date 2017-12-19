@@ -26,6 +26,15 @@ describe('Test - Initializing', () => {
       console.log(JSON.stringify(testObj,null,2))
       console.log(JSON.stringify(testObj2,null,4))
       console.log(JSON.stringify(testObj,['key1','key2'],4))
+
+
+      console.log(JSON.parse(JSON.stringify(testObj)).key1);
+      console.log(JSON.parse(JSON.stringify(testObj), (key,val)=>{
+        if(key == "key1"){
+          return "Jackpot"
+        }
+        return val;
+      }).key1)
       done()
     })
   });
