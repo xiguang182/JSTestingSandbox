@@ -45,6 +45,12 @@ const taskHandler = fn => d => {
   return d;
 };
 
+function taskHandler2(task){
+  task++;
+  console.log('doing task:',task)
+  return task;
+}
+
 // clearer version of taskHandler
 function taskHandlerExpanded(fn) {
   return function(d) {
@@ -54,7 +60,7 @@ function taskHandlerExpanded(fn) {
 }
 
 function myCleanPromise(){
-  return new Promise(function(resolves, reject){
+  return new Promise((resolves) =>{
     // do something
     let task = 1;
     console.log('doing task:',task);
@@ -63,6 +69,11 @@ function myCleanPromise(){
   .then(taskHandler(ret => console.log('doing task:',ret)))
   .then(taskHandler(ret => console.log('doing task:',ret)))
   .then(taskHandler(ret => console.log('doing task:',ret)))
+  .then(taskHandler2)
+  .then(taskHandler2)
+  .then(taskHandler2)
+  .then(taskHandler2)
+  .then(taskHandler2)
 }
 
 exports.doCleanTask = () => myCleanPromise();
