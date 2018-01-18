@@ -15,12 +15,8 @@ describe('Test - Initializing', () => {
           console.log(name);
         };
       }
-      
       let user = new User("John");
-      let user1 = new User("John1");
       user.sayHi(); // the method code has access to the outer "name"
-      user1.sayHi();
-      console.log(User.environment)
       done()
     })
   });

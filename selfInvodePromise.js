@@ -6,20 +6,20 @@ describe('Test - Initializing', () => {
 
   describe('Test 1', () => {
     it('self invoke promise test', function(done) {
-      let selfInvodePromise = (count, max)=>{
+      let selfInvodePromise = (max, count = 0)=>{
         return new Promise ((suc, err)=>{
           console.log("looping", count)
           count++
           suc({count,max})
         }).then(ret =>{
           if(ret.count < ret.max){
-            return selfInvodePromise(ret.count, ret.max);
+            return selfInvodePromise(ret.max, ret.count);
           }else{
             return "all done"
           }
         })
       }
-      selfInvodePromise(0, 20).then(ret => {
+      selfInvodePromise(20).then(ret => {
         console.log(ret)
       })
       console.log("finish")
