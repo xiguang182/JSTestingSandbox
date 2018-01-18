@@ -22,7 +22,7 @@ describe('Test - Initializing', () => {
       selfInvodePromise(20).then(ret => {
         console.log(ret)
       })
-      console.log("finish")
+      console.log("finish");
       done();
     })
 
