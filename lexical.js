@@ -20,4 +20,16 @@ describe('Test - Initializing', () => {
       done()
     })
   });
+  describe('Test 2', () => {
+    it('test item 1', function(done) {
+      const arr = [1,2,3,4];
+      for(var i = 0; i < arr.length; i++){ // var not let
+        console.log(i, arr[i]);
+        setTimeout(()=>{
+          console.log('timeout: ', i, arr[i])
+        }, 1000);
+      }
+      done()
+    })
+  });
 });
