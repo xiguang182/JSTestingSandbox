@@ -18,9 +18,9 @@ describe('Test - Initializing', () => {
       let node2 = new binaryTree.BinaryNode('game 2');
       let node3 = new binaryTree.BinaryNode('game 3');
       node1.leftChild = node2;
-      node2.parentNode = node1;
+      // node2.parentNode = node1;
       node1.rightChild = node3;
-      node3.parentNode = node1;
+      // node3.parentNode = node1;
       // let node4 = new binaryTree.BinaryNode('game 4');
       // let node5 = new binaryTree.BinaryNode('game 5');
       // node2.leftChild = node4;
@@ -30,9 +30,9 @@ describe('Test - Initializing', () => {
       let node6 = new binaryTree.BinaryNode('game 6');
       let node7 = new binaryTree.BinaryNode('game 7', data1);
       node3.leftChild = node6;
-      node6.parentNode = node3;
+      // node6.parentNode = node3;
       node3.rightChild = node7;
-      node7.parentNode = node3;
+      // node7.parentNode = node3;
 
 
       let endPoint1 = new binaryTree.EndPoint('Candidate 1');
@@ -90,9 +90,9 @@ describe('Test - Initializing', () => {
       let node2 = new binaryTree.BinaryNode('game 2');
       let node3 = new binaryTree.BinaryNode('game 3');
       node1.leftChild = node2;
-      node2.parentNode = node1;
+      // node2.parentNode = node1;
       node1.rightChild = node3;
-      node3.parentNode = node1;
+      // node3.parentNode = node1;
       // let node4 = new binaryTree.BinaryNode('game 4');
       // let node5 = new binaryTree.BinaryNode('game 5');
       // node2.leftChild = node4;
@@ -105,7 +105,7 @@ describe('Test - Initializing', () => {
       node3.specialLeftChild = true;
       // node6.parentNode = node3;
       node3.rightChild = node7;
-      node7.parentNode = node3;
+      // node7.parentNode = node3;
 
 
       let endPoint1 = new binaryTree.EndPoint('Candidate 1');
@@ -131,7 +131,7 @@ describe('Test - Initializing', () => {
 
       
       node7.insertNode();
-      node3.Root.iterateSubTree(binaryTree.BinaryNode.printNode);
+      node1.iterateSubTree(binaryTree.BinaryNode.printNode);
       function checkNode(node){
         console.log(node + ' result:' + binaryTree.BinaryNode.checkNodeChildren(node));
       };
@@ -155,11 +155,11 @@ describe('Test - Initializing', () => {
       ];
 
       let nodeRecords = [
-        {name:'match 1', parent: null, leftChild:'match 2', rightChild: 'match 3', specialLeftChild: false, specialRightChild: false, leftEndPoint: null, rightEndPoint: null},
-        {name:'match 2', parent: 'match 1', leftChild: null, rightChild: null, specialLeftChild: false, specialRightChild: false, leftEndPoint: 'Candidate 1', rightEndPoint: 'Candidate 2'},
-        {name:'match 3', parent: 'match 1', leftChild:'match 6', rightChild: 'match 7', specialLeftChild: false, specialRightChild: false, leftEndPoint: null, rightEndPoint: null},
-        {name:'match 6', parent: 'match 3', leftChild: null, rightChild: null, specialLeftChild: false, specialRightChild: false, leftEndPoint: 'Candidate 3', rightEndPoint: 'Candidate 4'},
-        {name:'match 7', parent: 'match 3', leftChild: null, rightChild: null, specialLeftChild: false, specialRightChild: false, leftEndPoint: 'Candidate 5', rightEndPoint: 'Candidate 6'},
+        {name:'match 1', leftChild:'match 2', rightChild: 'match 3', specialLeftChild: false, specialRightChild: false, leftEndPoint: null, rightEndPoint: null},
+        {name:'match 2', leftChild: null, rightChild: null, specialLeftChild: false, specialRightChild: false, leftEndPoint: 'Candidate 1', rightEndPoint: 'Candidate 2'},
+        {name:'match 3', leftChild:'match 6', rightChild: 'match 7', specialLeftChild: false, specialRightChild: false, leftEndPoint: null, rightEndPoint: null},
+        {name:'match 6', leftChild: null, rightChild: null, specialLeftChild: false, specialRightChild: false, leftEndPoint: 'Candidate 3', rightEndPoint: 'Candidate 4'},
+        {name:'match 7', leftChild: null, rightChild: null, specialLeftChild: false, specialRightChild: false, leftEndPoint: 'Candidate 5', rightEndPoint: 'Candidate 6'},
         // {name:'match 1', parent:null, leftChild:'match 2', rightChild: 'match 3', specialLeftChild: null, specialRightChild: false, leftEndPoint: null, rightEndPoint: null},
         // {name:'match 1', parent:null, leftChild:'match 2', rightChild: 'match 3', specialLeftChild: null, specialRightChild: false, leftEndPoint: null, rightEndPoint: null},
       ];
