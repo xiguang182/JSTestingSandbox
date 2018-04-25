@@ -183,19 +183,12 @@ describe('Test - Initializing', () => {
 			let minSwapsCouples4 = function(row) {
 				let counter = 0;
 				let len = row.length;
-				let findPartner = function(num){
-					if(num % 2){
-						return num - 1;
-					} else {
-						return num + 1;
-					}
-				}
 				let indexArr = [];
 				for(let i = 0;i<len;i++){
 					indexArr[row[i]]=i;
 				}
 				for(i = 0;i < len ;i +=2 ){
-					let tmp = findPartner(row[i+1]);
+					let tmp = 1^row[i+1];
 					if(row[i]!==tmp){
 						row[indexArr[tmp]] = row[i];
 						indexArr[row[i]] = indexArr[tmp];
@@ -204,7 +197,7 @@ describe('Test - Initializing', () => {
 				}
 				return counter;
 			}
-			console.log(minSwapsCouples3([5,4,2,6,3,1,0,7]))
+			console.log(minSwapsCouples4([5,4,2,6,3,1,0,7]))
 			done()
 		})
 	});
